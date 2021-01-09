@@ -1,5 +1,7 @@
 import React from "react";
 import {Card} from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function ECard(props){
     return (
