@@ -15,9 +15,6 @@ function Search(props){
             placeholder="Search for an Employee"
             id="search"
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
         <Button
           variant="primary"
