@@ -33,10 +33,6 @@ class SearchResults extends Component {
       .catch((err) => console.log(err));
   }
   filterEmployees = (searchkey) => {
-    console.log("***in Filter*******");
-    console.log(searchkey);
-    console.log(this.state.result);
-    // this.state.result = this.state.result.filter(this.state.result => this.state.result.includes(searchkey));
     var filterResult = this.state.result.filter(
       (person) => person.firstName === searchkey
     );
@@ -49,10 +45,6 @@ class SearchResults extends Component {
     event.preventDefault();
     const value = event.target.value;
     const name = event.target.name;
-    console.log("**********");
-    console.log(value);
-    console.log(name);
-    //filter function here
     this.filterEmployees(value);
     this.setState({
       [name]: value,
@@ -65,12 +57,6 @@ class SearchResults extends Component {
     console.log(event);
     const value = event.target.value;
     const name = event.target.name;
-    console.log("**********");
-    console.log(value);
-    console.log(name);
-    //filter function be called here
-    // this.filterEmployees(value);
-    // this.filterEmployees(this.state.search);
     this.setState({
       [name]: value,
     });
@@ -95,18 +81,18 @@ class SearchResults extends Component {
             </Col>
           </Row>
           <Row>
-            <Col sm={6}>
-              {[...this.state.result].map((item) => (
+            {[...this.state.result].map((m) => (
+              <Col sm={4}>
                 <ECard
-                  picture={item.picture}
-                  firstName={item.firstName}
-                  lastName={item.lastName}
-                  email={item.email}
-                  phone={item.phone}
-                  key={item.key}
+                  picture={m.picture}
+                  firstName={m.firstName}
+                  lastName={m.lastName}
+                  email={m.email}
+                  phone={m.phone}
+                  key={m.key}
                 />
-              ))}
-            </Col>
+              </Col>
+            ))}
           </Row>
         </Container>
       </div>
